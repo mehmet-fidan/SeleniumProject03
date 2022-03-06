@@ -1,5 +1,6 @@
 package Proje_03;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -71,9 +72,14 @@ public class Part_03 extends BaseStaticDriver {
 
         String resultMessage = "Your enquiry has been successfully sent to the store owner.";
 
+        Assert.assertEquals("Hatali sonuc aldiniz...", resultMessage,result.getText());
+
+        /*
         if (resultMessage.equals(result.getText())) {
             System.out.println("message is true");
         }
+
+         */
 
         Thread.sleep(2000);
         driver.quit();

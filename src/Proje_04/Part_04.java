@@ -1,5 +1,6 @@
 package Proje_04;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.BaseStaticDriver;
 
+import org.junit.Assert.*;
 import java.time.Duration;
 import java.util.List;
 
@@ -138,9 +140,13 @@ public class Part_04 extends BaseStaticDriver {
         WebElement message = driver.findElement(By.xpath("//strong[text()='Your order has been successfully processed!']"));
         String messageControl = "Your order has been successfully processed!"; ////div[@class='title'] //strong
 
+        Assert.assertEquals("Hatali sonuc aldiniz...",messageControl,message.getText());
+        /*
         if (messageControl.equals(message.getText())) {
             System.out.println("message is received.");
         }
+
+         */
         Thread.sleep(2000);
         driver.quit();
 
